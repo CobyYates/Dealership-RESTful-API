@@ -1,0 +1,28 @@
+{
+  "name": "dealership_restful",
+  "version": "0.0.1",
+  "description": "RESTful API for Dealership web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.js",
+    "start-dev": "nodemon -r esm index.js"
+  },
+  "author": "Coby Yates",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.1",
+    "mongodb": "^3.5.2",
+    "mongoose": "^5.8.11",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
