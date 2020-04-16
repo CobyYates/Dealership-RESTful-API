@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-
 import { adminRouter } from "./routes/admin.route";
+
 
 const app = express();
 let port = 3000;
@@ -37,11 +37,16 @@ if (port == null || port == "") {
   port = 3000;
 }
 
+const dotenv = require("dotenv")
+dotenv.config()
+
+require("dotenv").config({ path: "ENV_FILENAME" })
 mongoose
-  .set('useFindAndModify', false)
-  .connect(
-    "mongodb+srv://cober:test1234@cluster0-wd74s.mongodb.net/garage?retryWrites=true",
-    { useNewUrlParser: true, useUnifiedTopology: true }
+  .set("useFindAndModify", false)
+  .connect(process.env.MongoDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
   )
   .then((result) => {
     app.listen(port, () => {
