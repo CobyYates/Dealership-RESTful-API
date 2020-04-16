@@ -28,7 +28,7 @@ const productSchema = new Schema({
     required: true,
   },
   topSpeed: {
-    type: Number,
+    type: String,
     required: true,
   },
   price: {
