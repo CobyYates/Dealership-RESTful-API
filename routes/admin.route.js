@@ -18,4 +18,4 @@ adminRouter.post("/add-product", postAddProduct);
 
 adminRouter.post("/edit-product", postEditProduct);
 
-adminRouter.post("/delete-product/:id", postDeleteProduct);
+adminRouter.post("/delete-product", postDeleteProduct);

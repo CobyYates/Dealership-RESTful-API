@@ -38,6 +38,7 @@ if (port == null || port == "") {
 }
 
 mongoose
+  .set('useFindAndModify', false)
   .connect(
     "mongodb+srv://cober:test1234@cluster0-wd74s.mongodb.net/garage?retryWrites=true",
     { useNewUrlParser: true, useUnifiedTopology: true }
