@@ -33,24 +33,16 @@ app.use("/api", function (req, res, next) {
   next();
 });
 
-if (port == null || port == "") {
-  port = 3000;
-}
-
 const dotenv = require("dotenv")
 dotenv.config()
 
 require("dotenv").config({ path: "ENV_FILENAME" })
 mongoose
-  .set("useFindAndModify", false)
-  .connect(process.env.MongoDB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-  )
+  // .set("useFindAndModify", false)
+  .connect(process.env.MongoDB)
   .then((result) => {
     app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
+      app.listen(process.env.PORT || 3000);
     });
   })
   .catch((err) => console.log(err));
