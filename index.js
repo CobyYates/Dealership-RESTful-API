@@ -38,7 +38,7 @@ dotenv.config()
 
 require("dotenv").config({ path: "ENV_FILENAME" })
 mongoose
-  // .set("useFindAndModify", false)
+  .set("useFindAndModify", false)
   .connect(process.env.MongoDB)
   .then((result) => {
     app.listen(port, () => {
