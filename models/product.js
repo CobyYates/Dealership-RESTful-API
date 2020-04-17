@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
   year: {
     type: String,
-    required: true,
+    required: false,
   },
   make: {
     type: String,
@@ -17,32 +17,36 @@ const productSchema = new Schema({
   },
   torque: {
     type: String,
-    required: true,
+    required: false,
   },
   engine: {
     type: String,
-    required: true,
+    required: false,
   },
   sixty: {
     type: Number,
-    required: true,
+    required: false,
   },
   topSpeed: {
     type: String,
-    required: true,
+    required: false,
   },
   price: {
     type: String,
-    required: true,
+    required: false,
   },
   hp: {
     type: Number,
-    required: true,
+    required: false,
   },
   weight: {
     type: Number,
-    required: true,
+    required: false,
   },
+  imgURL: {
+    type: String,
+    required: false,
+  }
 });
 
 export const Product = mongoose.model("Product", productSchema);

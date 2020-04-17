@@ -28,6 +28,7 @@ export const getProductById = (req, res, next) => {
 export const postAddProduct = (req, res, next) => {
   console.log(req.query);
   const product = new Product({
+    imgURL: req.query.imgURL,
     make: req.query.make,
     year: req.query.year,
     model: req.query.model,
@@ -54,6 +55,7 @@ export const postAddProduct = (req, res, next) => {
 export const postEditProduct = (req, res, next) => {
   console.log(req.query.price);
   const prodId = req.query.id;
+  const updatedImgURL = req.query.imgURL;
   const updatedMake = req.query.make
   const updatedYear = req.query.year
   const updatedModel = req.query.model
@@ -68,6 +70,7 @@ export const postEditProduct = (req, res, next) => {
 
   Product.findById(prodId)
     .then((product) => {
+      product.imgURL = updatedImgURL
       product.price = updatedPrice
       product.make = updatedMake
       product.year = updatedYear
